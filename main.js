@@ -9,7 +9,7 @@ async function run() {
     const readmeKey = core.getInput('readme-api-key', { required: true });
     const apiFilePath = core.getInput('api-file-path', { required: true });
     const apiSettingId = core.getInput('readme-api-id', { required: true });
-    const apiVersion = core.getInput('readme-api-version', { required: true }).toString('ascii');
+    const apiVersion = core.getInput('readme-api-version', { required: true });
     const token = core.getInput('repo-token', { required: true });
   
     const client = new github.GitHub(token);
@@ -28,7 +28,7 @@ async function run() {
         spec: fs.createReadStream(path.resolve(process.cwd(), 'file.json')),
       },
       headers: {
-        'x-readme-version': apiVersion,
+        'x-readme-version': apiVersion.toString('ascii'),
         'x-readme-source': 'github',
       },
       auth: { user: readmeKey },
