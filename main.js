@@ -38,7 +38,7 @@ async function run() {
     return request.put(`https://dash.readme.io/api/v1/api-specification/${apiSettingId}`, options).then(() => {
       'Success!'
     }, (err) => {
-      core.setFailed(err.message);
+      core.setFailed(err.message + " " + apiVersion);
     });
   
   } catch (error) {
