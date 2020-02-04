@@ -28,7 +28,7 @@ async function run() {
         spec: fs.createReadStream(path.resolve(process.cwd(), 'file.json')),
       },
       headers: {
-        'x-readme-version': apiVersion.toString('ascii'),
+        'x-readme-version': "1.0",
         'x-readme-source': 'github',
       },
       auth: { user: readmeKey },
