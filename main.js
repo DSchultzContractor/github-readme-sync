@@ -9,7 +9,7 @@ async function run() {
     const readmeKey = core.getInput('readme-api-key', { required: true });
     const apiFilePath = core.getInput('api-file-path', { required: true });
     const apiSettingId = core.getInput('readme-api-id', { required: true });
-    const apiVersion = core.getInput('readme-api-version', { required: true }).toString();
+    const apiVersion = core.getInput('readme-api-version', { required: true }).toString('ascii');
     const token = core.getInput('repo-token', { required: true });
   
     const client = new github.GitHub(token);
