@@ -38,11 +38,13 @@ async function run() {
     return request.put(`https://dash.readme.io/api/v1/api-specification/${apiSettingId}`, options).then(() => {
       'Success!'
     }, (err) => {
-      core.setFailed(err.message + " " + apiVersion);
+      //core.setFailed(err.message + " " + apiVersion);
+      core.setFailed("TEST error message 1");
     });
   
   } catch (error) {
-    core.setFailed(error.message);
+    //core.setFailed(error.message);
+    core.setFailed("TEST error message 2");
   }
 }
 
